@@ -6,6 +6,7 @@ use ReflectionClass;
 class RestService {
     
     public $app = null;
+    public $baseApiUrl = "/rest";
     
     public function __construct() {
         $this->app = new \Slim\Slim();
@@ -16,16 +17,27 @@ class RestService {
     }
     
     public function get($url,$className,$methodName) {
+        $url = $this->baseApiUrl.$url;
         $this->map($this->app,$url,$className,$methodName,"GET");
     }
     
     public function post($url,$className,$methodName) {
+        $url = $this->baseApiUrl.$url;
         $this->map($this->app,$url,$className,$methodName,"POST");
     }
     
     public function put($url,$className,$methodName) {
+        $url = $this->baseApiUrl.$url;
         $this->map($this->app,$url,$className,$methodName,"PUT");
     }
+    /**
+     * Codigo tomado donde itx
+     * @param unknown $app
+     * @param unknown $url
+     * @param unknown $className
+     * @param unknown $methodName
+     * @param unknown $httpMethod
+     */
     
     public function map(&$app,$url,$className,$methodName,$httpMethod) {
         $app->map($url,function() use ($app,$url,$className,$methodName) {

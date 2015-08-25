@@ -5,7 +5,6 @@ require_once __DIR__.'/ServiciosRest/ComprasServicio.php';
 require_once __DIR__.'/ServiciosRest/VisitasServicio.php';
 
 $service = new \Tracker\Common\RestService();
-Tracker\Servicios\ServiciosRest\ComprasServicio::initService($service);
-Tracker\Servicios\ServiciosRest\VisitasServicio::initService($service);
+$service->get("/visitas/procesar/","{$cfg["servicePath"]}\VisitasServicio","procesar");
 $service->runService();
 ?>
