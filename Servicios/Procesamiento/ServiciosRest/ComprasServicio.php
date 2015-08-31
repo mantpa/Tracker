@@ -1,5 +1,5 @@
 <?php
-namespace Tracker\Servicios\ServiciosRest;
+namespace Tracker\Servicios\Procesamiento\ServiciosRest;
 
 class ComprasServicio {
     

@@ -1,0 +1,11 @@
+#RewriteEngine On
+#RewriteBase /itmixin/coordiutilr/store/
+#RewriteRule ^_index\.php$ - [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . _index.php [L]
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ _index.php [QSA,L]
+
