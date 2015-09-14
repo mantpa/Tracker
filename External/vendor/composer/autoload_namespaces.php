@@ -7,4 +7,15 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Slim' => array($vendorDir . '/slim/slim'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log'),
+    'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
+    'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
+    'Doctrine\\OrientDB' => array($vendorDir . '/doctrine/orientdb-odm/src'),
+    'Doctrine\\ODM\\OrientDB' => array($vendorDir . '/doctrine/orientdb-odm/src'),
+    'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
+    'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
+    'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
+    'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib'),
+    'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
+    'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib'),
 );

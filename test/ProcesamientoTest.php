@@ -7,12 +7,6 @@ class ProcesamientoTest {
         $client = new \GuzzleHttp\Client();
         $apiUrl = "http://localhost/Tracker/Servicios/Procesamiento/_index.php/rest/visitas/procesar/";
         
-       /* $p = array(
-            'userId' => "1", 
-            'itemId' => "1",
-            "categoriaId" => "1"
-        );*/
-        
         $response = $client->post($apiUrl,array('body'=>json_encode($p)));
         $dataResponse = json_decode($response->getBody(true),1);
         return $dataResponse;
@@ -37,7 +31,7 @@ $productos = array(
     '74098'=>array('codigo_producto'=>74098,'nombre'=>'Tablet Silver Max Kids 3D','codigo_categoria'=>728,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=563753'),
     '37020'=>array('codigo_producto'=>37020,'nombre'=>'Muscletech Masstech Performance Supplement, Milk Chocolate, 7.05 Pound','codigo_categoria'=>821,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=923099'),
     '6688'=>array('codigo_producto'=>6688,'nombre'=>'Torno esquinero media luna 1 nivel blanco','codigo_categoria'=>100,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=18953'),
-    '105368'=>array('codigo_producto'=>105368,'nombre'=>'Olla de cocción lenta Hamilton Beach Setn','codigo_categoria'=>86,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=930069'),
+    /*'105368'=>array('codigo_producto'=>105368,'nombre'=>'Olla de cocción lenta Hamilton Beach Setn','codigo_categoria'=>86,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=930069'),
     '25818'=>array('codigo_producto'=>25818,'nombre'=>'Cobertor Char Broil de 173 cm','codigo_categoria'=>108,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=88899'),
     '7574'=>array('codigo_producto'=>7574,'nombre'=>'Gel Multiorgasmos x 20 ml- colapsible','codigo_categoria'=>811,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=21175'),
     '50492'=>array('codigo_producto'=>50492,'nombre'=>'Cellucor C4 Extreme Workout Supplement, Icy Blue Razz, 342 Gram','codigo_categoria'=>821,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=930490'),
@@ -97,14 +91,13 @@ $productos = array(
     '106881'=>array('codigo_producto'=>106881,'nombre'=>'Comederos para mascotas de silicona WQ-BL01-PINK','codigo_categoria'=>473,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=934302'),
     '38397'=>array('codigo_producto'=>38397,'nombre'=>'Nevera Luxur Challenger 254 Litros CR 370B','codigo_categoria'=>519,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=933089'),
     '94355'=>array('codigo_producto'=>94355,'nombre'=>'Sanduchera','codigo_categoria'=>524,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=558270'),
-    '29916'=>array('codigo_producto'=>29916,'nombre'=>'BLU Studio 5.0 II Unlocked Dual Sim Phone, White','codigo_categoria'=>769,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=924221'),
+    '29916'=>array('codigo_producto'=>29916,'nombre'=>'BLU Studio 5.0 II Unlocked Dual Sim Phone, White','codigo_categoria'=>769,'imagen'=>'http://www.coordiutil.com/shared/dbfile.php?id=924221'),*/
 );
 
 print_r("PRODUCTOS INCLUIR<br/>");
 $randIndex =  rand(0,18);
 
 foreach ($productos as $producto) {
-    
     
     $rProducto = array(
         "userId" => $sesiones[$randIndex],

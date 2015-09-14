@@ -6,7 +6,7 @@ use Tracker\Servicios\Visualizacion\Repositorios\RecomendadosRepository;
 class Productos {
     
     private $recomendadosRepository = null;
-    public function __construct($p) {
+    public function __construct() {
         $this->recomendadosRepository = new RecomendadosRepository();
     }
     /**

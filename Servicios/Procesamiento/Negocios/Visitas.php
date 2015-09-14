@@ -19,6 +19,22 @@ class Visitas {
     public function procesarSimiltudProducto($usuario,$producto) {
         
     }
+    /**
+     * idCliente
+     * numeroVisitas
+     * @param unknown $p
+     */
+    public function procesarPendientes($p) {
+        //buscar visitas pendientes
+        $p->estado = 'pendiente';
+        $visitasPendientes = $this->visitasRepository->buscarVisitas($p);
+        
+        foreach ($visitasPendientes as $visita) {
+            $this->procesar($visita);
+        }
+        return $visitasPendientes;
+    }
+    
     
 }
 ?>

@@ -1,6 +1,8 @@
 {
     "require": {
         "slim/slim": "^2.6",
-        "predictionio/predictionio": "~0.8.2"
+        "predictionio/predictionio": "~0.8.2",
+        "ostico/phporient": "dev-master",
+        "doctrine/orientdb-odm": "dev-master"
     }
 }

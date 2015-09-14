@@ -12,5 +12,15 @@ class VisitasServicio {
         $visita->procesar($p);
         return (object) array("resultado"=>"1","descripcion"=> "VISITA PROCESADA");
     }
+    /**
+     * idCliente
+     * numeroVisitas
+     * @param unknown $p
+     */
+    public static function procesarVisitasPendientes($p) {
+        $visita = new Visitas($p);
+        $visitasProcesadas = $visita->procesarPendientes($p);
+        return (object) array("resultado"=>"1","descripcion"=> "VISITAS PENDIENTES PROCESADAS","visitas" =>$visitasProcesadas );
+    }
 }
 ?>

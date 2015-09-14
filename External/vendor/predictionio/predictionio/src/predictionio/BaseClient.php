@@ -57,9 +57,7 @@ abstract class BaseClient {
       return $response->json();
     } catch (ClientException $e) {
       throw new PredictionIOAPIError($e->getMessage()); 
-    } catch (ServerErrorResponseException $e) {
-      throw new PredictionIOAPIError($e->getMessage()); 
-    } 
+    }
   }
 }
 ?>

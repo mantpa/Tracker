@@ -7,7 +7,7 @@ use Tracker\Visualizacion\Negocios\Productos;
 class ProductosRecomendadosServicio {
     
     public static function recomendarVisitas($p) {
-        $recomendados = new Productos($p);
+        $recomendados = new Productos();
         return $recomendados->recomendarVisitas($p);
     }
 }
