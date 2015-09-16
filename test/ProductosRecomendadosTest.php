@@ -37,10 +37,12 @@ class ProductosRecomendadosTest {
 //$infoProducto = array("userId"=>"k834dr2uhl09m7cisqvgisd7n0","itemId"=>"62999","registros"=> 10);
 //$infoProducto = array("userId"=>"k834dr2uhl09m7cisqvgisd7m513","itemId"=>"62999","registros"=> 10);
 //$infoProducto = array("userId"=>"k834dr2uhl09m7cisqvgisd7m59","itemId"=>"101706","registros"=> 10);
-$infoProducto = array("userId"=>"k834dr2uhl09m7cisqvgisd7m16","itemId"=>"28639","registros"=> 10, "codigo_cliente" => "1");
+$infoProducto = array("userId"=>"k834dr2uhl09m7cisqvgisd7m16","itemId"=>"70168","registros"=> 20, "codigo_cliente" => "1","plantilla"=>"0");
+$infoProducto2 = array("userId"=>"k834dr2uhl09m7cisqvgisd7m16","itemId"=>"70168","registros"=> 20, "codigo_cliente" => "1","plantilla"=>"1");
 
 
 $productos = ProductosRecomendadosTest::buscarRecomendadosEnPlantilla($infoProducto);
+$productos2 = ProductosRecomendadosTest::buscarRecomendadosEnPlantilla($infoProducto2);
 
 
 ?>
@@ -63,13 +65,23 @@ $productos = ProductosRecomendadosTest::buscarRecomendadosEnPlantilla($infoProdu
             }
             .row {
                 width:100%;
-                text-align:center;
+            }
+            
+            
+            .row2 {
+                width:100%;
+            }
+            
+            .cell2 {
+                float:left;
+                margin-right:3px;
+                width: 100%;
             }
             
             .cell {
                 float:left;
                 margin-right:3px;
-                 width: 240px;
+                 width: 300px;
             }
             
             .nombre a{
@@ -114,7 +126,7 @@ $productos = ProductosRecomendadosTest::buscarRecomendadosEnPlantilla($infoProdu
     </head>
     <body>
         <div class="contenedor">
-            <h2 class="title-canasta">Recomendados</h2>
+            <h2 class="title-canasta">Recomendados Plantilla1 </h2>
             <div class="row">
                 <?php
                     foreach ($productos as $producto) {
@@ -122,10 +134,71 @@ $productos = ProductosRecomendadosTest::buscarRecomendadosEnPlantilla($infoProdu
                     }
                 ?>
             </div>
-            <br/><br/><br/><br/>
+            <br/><br/>
+            <h2 class="title-canasta">Recomendados Plantilla2</h2>
+            <div class="row2">
+                <?php
+                    foreach ($productos2 as $producto2) {
+                        echo $producto2;
+                    }
+                ?>
+            </div>
+            <br/><br/>
             <div style="clear:both;"></div>
-            <h2 class="title-canasta">Ofertas</h2>
+            <h2 class="title-canasta">Catalogo general de la tienda</h2>
             <div class="row">
+                <div class="cell">
+                    <div class="nombre">
+                        <a href="http://www.coordiutil.com/item-pr-30192">
+                            Bicicleta recumbent 804 D
+                        </a>
+                    </div>
+                    <div class="thumb">
+                        <a href="http://www.coordiutil.com/item-pr-30192">
+                            <img src="http://rs3.coordiutil.com/shared/dbfile.php?id=62917&w=220&h=140&frm=1&q=75" />
+                        </a>
+                    </div>
+                    <div class="categoria"></div>
+                </div>
+                 <div class="cell">
+                    <div class="nombre">
+                        <a href="http://www.coordiutil.com/item-pr-30192">
+                            Ejercitador abdominal  AB Power ...
+                        </a>
+                    </div>
+                    <div class="thumb">
+                        <a href="http://www.coordiutil.com/item-pr-30192">
+                            <img src="http://rs2.coordiutil.com/shared/dbfile.php?id=101326&w=220&h=140&frm=1&q=75" />
+                        </a>
+                    </div>
+                    <div class="categoria"></div>
+                </div>
+                 <div class="cell">
+                    <div class="nombre">
+                        <a href="http://www.coordiutil.com/item-pr-30192">
+                            Colchón Plus 120 x 190
+                        </a>
+                    </div>
+                    <div class="thumb">
+                        <a href="http://www.coordiutil.com/item-pr-30192">
+                            <img src="http://rs4.coordiutil.com/shared/dbfile.php?id=579615&w=220&h=140&frm=1&q=75" />
+                        </a>
+                    </div>
+                    <div class="categoria"></div>
+                </div>
+                 <div class="cell">
+                    <div class="nombre">
+                        <a href="http://www.coordiutil.com/item-pr-30192">
+                            Portátil Lenovo Y40
+                        </a>
+                    </div>
+                    <div class="thumb">
+                        <a href="http://www.coordiutil.com/item-pr-30192">
+                            <img src="http://rs2.coordiutil.com/shared/dbfile.php?id=317598&w=220&h=140&frm=1&q=75" />
+                        </a>
+                    </div>
+                    <div class="categoria"></div>
+                </div>
                 <div class="cell">
                     <div class="nombre">
                         <a href="http://www.coordiutil.com/item-pr-30192">

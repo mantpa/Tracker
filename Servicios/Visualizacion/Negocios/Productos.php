@@ -42,7 +42,7 @@ class Productos {
             return array();
         }
         
-        $plantilla = $plantillas[0][0];
+        $plantilla = $plantillas[0][$p->plantilla];
         $loader = new \Twig_Loader_Array(array(
             'render' => $plantilla
         ));

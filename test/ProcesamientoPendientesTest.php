@@ -14,7 +14,7 @@ class VisitasPendientesTest {
 }
 
 $cliente = 1;
-$p = (object)["idCliente" => $cliente , "numeroVisitas" => "10"];
+$p = (object)["idCliente" => $cliente , "numeroVisitas" => "500"];
 $result = VisitasPendientesTest::process($p);
 print_r($result);
 
