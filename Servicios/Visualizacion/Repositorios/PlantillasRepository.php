@@ -1,16 +1,13 @@
 <?php
 namespace Tracker\Servicios\Visualizacion\Repositorios;
-
+require_once __DIR__.'/../../../Common/GraphAdapters/OrientDBAdapter.php';
 use Tracker\Common\GraphAdapters\OrientDBAdapter;
 
-
-require_once __DIR__.'/../../../Common/GraphAdapters/OrientDBAdapter.php';
 
 class PlantillasRepository {
     private $bdProductosAdapter = null;
     
     public function __construct() {
-        global $cfg;
         
         $this->bdProductosAdapter = new OrientDBAdapter();
     }
@@ -20,7 +17,14 @@ class PlantillasRepository {
     }
     
     public function buscarPlantillas($p) {
-       return (object)$this->bdProductosAdapter->buscarPlantillas((object)array("codigo_cliente"=>$p->clienteId));
+       $clientes = $this->bdProductosAdapter->buscarPlantillas((object)array("codigo_cliente"=>$p->codigo_cliente));
+       $plantillas = array();
+       
+       if(!empty($clientes)) {
+           $plantillas[]  = array_merge($clientes[0]->plantillas,$plantillas);
+       }
+       
+       return $plantillas;
     }
 }
 ?>

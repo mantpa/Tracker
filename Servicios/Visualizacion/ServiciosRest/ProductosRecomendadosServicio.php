@@ -10,5 +10,10 @@ class ProductosRecomendadosServicio {
         $recomendados = new Productos();
         return $recomendados->recomendarVisitas($p);
     }
+    
+    public static function recomendarProductosEnPlantilla($p) {
+        $recomendados = new Productos();
+        return $recomendados->recomendarProductosEnPlantilla($p);
+    }
 }
 ?>

@@ -29,8 +29,9 @@ class OrientDBAdapter {
     }
     
     public function buscarPlantillas($p) {
-        $this->query->from(array('Clientes'))->where('codigo_cliente = ?', $p->codigo_cliente);
-        return $this->manager->execute($query);
+        $sql = "select plantillas from Clientes where codigo_cliente = {$p->codigo_cliente}";
+        $output = $this->binding->query($sql);
+        return $output->getResult();
     }
     
     /**
