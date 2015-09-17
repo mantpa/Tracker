@@ -42,7 +42,7 @@ class OrientDBAdapter {
      * @return \Doctrine\OrientDB\Binding\mixed
      */
     public function buscarVisitas($p) {
-        $sql = "select \$visitas.sesion[0] as userId ,codigo_producto as itemId,nombre,codigo_categoria as categoriaId,imagen from Productos WHERE cliente = {$p->idCliente} and any() TRAVERSE (estado = '{$p->estado}')  let \$visitas = ( select * from (traverse in('Visitas') from \$parent.\$current ) where \$depth >=1 )  limit {$p->numeroVisitas}";
+        $sql = "select \$productos.codigo_producto[0] as itemId,\$productos.nombre[0] as nombre,\$productos.codigo_categoria[0] as categoriaId, \$productos.imagen[0] as imagen,\$usuarios.sesion[0] as userId from Visitas let \$productos = (SELECT EXPAND(in) FROM \$current), \$usuarios = (SELECT EXPAND(out) FROM \$current) WHERE estado = '{$p->estado}' and out.sesion = 'k834dr2uhl09m7cisqvgisd7m20' and out.cliente = {$p->idCliente} limit {$p->numeroVisitas}";
         $output = $this->binding->query($sql);
         return $output->getResult();
     }

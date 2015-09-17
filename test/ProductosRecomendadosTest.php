@@ -34,11 +34,16 @@ class ProductosRecomendadosTest {
     }
 }
 
+$userId = $_GET["userId"];
+$itemId = $_GET["itemId"];
+
 //$infoProducto = array("userId"=>"k834dr2uhl09m7cisqvgisd7n0","itemId"=>"62999","registros"=> 10);
 //$infoProducto = array("userId"=>"k834dr2uhl09m7cisqvgisd7m513","itemId"=>"62999","registros"=> 10);
 //$infoProducto = array("userId"=>"k834dr2uhl09m7cisqvgisd7m59","itemId"=>"101706","registros"=> 10);
-$infoProducto = array("userId"=>"k834dr2uhl09m7cisqvgisd7m16","itemId"=>"70168","registros"=> 20, "codigo_cliente" => "1","plantilla"=>"0");
-$infoProducto2 = array("userId"=>"k834dr2uhl09m7cisqvgisd7m16","itemId"=>"70168","registros"=> 20, "codigo_cliente" => "1","plantilla"=>"1");
+//$infoProducto = array("userId"=>"k834dr2uhl09m7cisqvgisd7m16","itemId"=>"70168","registros"=> 20, "codigo_cliente" => "1","plantilla"=>"0");
+//k834dr2uhl09m7cisqvgisd7m20 => 63630
+$infoProducto = array("userId"=>$userId,"itemId"=>$itemId,"registros"=> 20, "codigo_cliente" => "1","plantilla"=>"0");
+$infoProducto2 = array("userId"=>$userId,"itemId"=>$itemId,"registros"=> 20, "codigo_cliente" => "1","plantilla"=>"1");
 
 
 $productos = ProductosRecomendadosTest::buscarRecomendadosEnPlantilla($infoProducto);
@@ -81,10 +86,10 @@ $productos2 = ProductosRecomendadosTest::buscarRecomendadosEnPlantilla($infoProd
             .cell {
                 float:left;
                 margin-right:3px;
-                 width: 300px;
+                width: 300px;
             }
             
-            .nombre a{
+            .cell .nombre a{
                 color: #2681c0;
                 display: block;
                 font-size: 16px;
@@ -92,9 +97,26 @@ $productos2 = ProductosRecomendadosTest::buscarRecomendadosEnPlantilla($infoProd
                 margin-bottom:10px;
             }
             
-            .thumb {
+            .cell2 .nombre a{
+                color: red;
+                display: block;
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom:10px;
+            }
+            
+            .cell .thumb {
                 background-color: white;
                 border: 1px solid #c8c8c8;
+                height: 145px;
+                margin-bottom: 10px;
+                position: relative;
+                width: 225px;
+            }
+            
+            .cell2 .thumb {
+                background-color: white;
+                border: 2px solid #00549f;
                 height: 145px;
                 margin-bottom: 10px;
                 position: relative;
@@ -126,7 +148,7 @@ $productos2 = ProductosRecomendadosTest::buscarRecomendadosEnPlantilla($infoProd
     </head>
     <body>
         <div class="contenedor">
-            <h2 class="title-canasta">Recomendados Plantilla1 </h2>
+            <h2 class="title-canasta">Recomendados Plantilla1 del usuario <?php echo $userId; ?> </h2>
             <div class="row">
                 <?php
                     foreach ($productos as $producto) {
@@ -135,6 +157,7 @@ $productos2 = ProductosRecomendadosTest::buscarRecomendadosEnPlantilla($infoProd
                 ?>
             </div>
             <br/><br/>
+            <div style="clear:both;"></div>
             <h2 class="title-canasta">Recomendados Plantilla2</h2>
             <div class="row2">
                 <?php
@@ -143,7 +166,7 @@ $productos2 = ProductosRecomendadosTest::buscarRecomendadosEnPlantilla($infoProd
                     }
                 ?>
             </div>
-            <br/><br/>
+            <br/><br/><br/><br/>
             <div style="clear:both;"></div>
             <h2 class="title-canasta">Catalogo general de la tienda</h2>
             <div class="row">

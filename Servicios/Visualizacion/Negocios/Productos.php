@@ -50,11 +50,7 @@ class Productos {
         $twig = new \Twig_Environment($loader);
         
         foreach ($productos as $producto) {
-            $aPr = array();
-            $aPr["codigo_producto"] = $producto->codigo_producto;
-            $aPr["nombre"] = $producto->nombre;
-            $aPr["imagen"] = $producto->imagen;
-            $prRender = $twig->render('render', $aPr);
+            $prRender = $twig->render('render', (array)$producto);
             $result[] = $prRender;
         }
         return $result;
